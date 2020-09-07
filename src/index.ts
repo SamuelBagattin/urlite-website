@@ -1,5 +1,5 @@
 import './styles';
-function component() {
+function component(): HTMLDivElement {
     const element: HTMLDivElement = document.createElement('div');
     element.innerHTML = 'coucou';
     return element;

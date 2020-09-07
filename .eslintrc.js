@@ -16,11 +16,23 @@ module.exports = {
         '@typescript-eslint/typedef': [
             'error',
             {
+                arrayDestructuring: true,
                 arrowParameter: true,
-                variableDeclaration: true,
                 memberVariableDeclaration: true,
+                objectDestructuring: true,
                 parameter: true,
                 propertyDeclaration: true,
+                variableDeclaration: true,
+                variableDeclarationIgnoreFunction: true,
+            },
+        ],
+        '@typescript-eslint/explicit-function-return-type': [
+            'error',
+            {
+                allowExpressions: false,
+                allowTypedFunctionExpressions: false,
+                allowHigherOrderFunctions: false,
+                allowConciseArrowFunctionExpressionsStartingWithVoid: false,
             },
         ],
         // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
