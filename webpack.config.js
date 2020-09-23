@@ -1,6 +1,7 @@
 //Webpack requires this to work with directories
 const path = require('path');
 const extract = require('mini-css-extract-plugin');
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const isDevelopment = process.env.NODE_ENV === 'development'
 
 // This is main configuration object that tells Webpackw what to do.
@@ -71,5 +72,6 @@ module.exports = {
             filename: "main.css",
             chunkFilename: isDevelopment ? '[id].css' : '[id].[hash].css'
         }),
+        new OptimizeCSSAssetsPlugin({})
     ],
 };
