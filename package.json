@@ -10,7 +10,7 @@
     "watch": "webpack-dev-server --config webpack.config.js --watch"
   },
   "dependencies": {
-    "spectre.css": "^0.5.9"
+    "materialize-css": "^1.0.0-rc.2"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.0.1",

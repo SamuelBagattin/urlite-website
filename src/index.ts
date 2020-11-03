@@ -1,3 +1,4 @@
+import 'materialize-css/dist/js/materialize.min';
 import './styles';
 import { getButton, getInput } from './scripts/typed-elements';
 import { createShortUrl } from './scripts/api';
