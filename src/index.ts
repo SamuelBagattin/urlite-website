@@ -1,8 +1,12 @@
 import './styles';
-function component(): HTMLDivElement {
-    const element: HTMLDivElement = document.createElement('div');
-    element.innerHTML = 'coucou';
-    return element;
-}
+import { getButton, getInput } from './scripts/typed-elements';
+import { createShortUrl } from './scripts/api';
+import { showShortUrl } from './scripts/dom-manipulation';
 
-document.body.appendChild(component());
+getButton('button#create-short-url').addEventListener(
+    'click',
+    async (): Promise<void> => {
+        const input: HTMLInputElement = getInput('input.form-input');
+        showShortUrl((await createShortUrl(input.value)).shortUrl);
+    },
+);

@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build:windows": "rimraf dist/ && mkdir dist && copy src\\index.html dist\\ && yarn run build-css-js",
-    "build:unix": "rimraf dist/ && cp src/index.html dist/ && yarn run build-css-js",
+    "build:unix": "rm -rf dist/ && mkdir dist && cp src/index.html dist/ && yarn run build-css-js",
     "build-css-js": "webpack --config webpack.config.js -p --mode='production'",
     "watch": "webpack-dev-server --config webpack.config.js --watch"
   },
