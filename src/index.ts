@@ -1,7 +1,7 @@
 import 'materialize-css/dist/js/materialize.min';
 import './styles';
 import { createShortUrl } from './scripts/api';
-import { showShortUrl, submitUrlElement } from './scripts/dom';
+import { hideUrlError, showShortUrl, showUrlError, submitUrlElement } from './scripts/dom';
 import { urlInputChanges, urlInputValidationChanges } from './scripts/state';
 import { UrlInputData } from './scripts/models';
 
@@ -24,18 +24,11 @@ function subscribeToUrlInputDataChanges(): void {
 }
 
 function subscribeToUrlInputValidationChanges(): void {
-    urlInputValidationChanges.subscribe((e: boolean): void => {
-        if (!e) {
-            showError();
+    urlInputValidationChanges.subscribe((isValid: boolean): void => {
+        if (!isValid) {
+            showUrlError();
         } else {
-            hideError();
+            hideUrlError();
         }
     });
-}
-
-function showError(): void {
-    console.log('err');
-}
-function hideError(): void {
-    console.log('pas error');
 }
